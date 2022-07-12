@@ -11,8 +11,7 @@ class CardsProvider with ChangeNotifier {
     CardModel(
       id: "Laser 1",
       title: "Laser package 1",
-      imageUrl:
-          'https://sozoclinic.sg/wp-content/uploads/laser_treatment_what_you_need_to_know.jpg',
+      imageUrl: 'assets/images/products/Laser1.jpeg',
       productCategoryName: 'Laser',
       expiryDate: '12-12-1212',
       price: 12000,
@@ -21,9 +20,26 @@ class CardsProvider with ChangeNotifier {
     CardModel(
       id: "Botox 1",
       title: "Botox package 1",
-      imageUrl:
-          'https://static.india.com/wp-content/uploads/2022/01/pjimage-2022-01-04T194229.309.jpg',
+      imageUrl: 'assets/images/products/Botox1.jpeg',
       productCategoryName: 'Botox',
+      expiryDate: '12-12-1212',
+      price: 20000,
+      visitAmount: 5,
+    ),
+    CardModel(
+      id: "Treatment 1",
+      title: "Treatment package 1",
+      imageUrl: 'assets/images/products/Treatment1.jpeg',
+      productCategoryName: 'Treatment',
+      expiryDate: '12-12-1212',
+      price: 20000,
+      visitAmount: 5,
+    ),
+    CardModel(
+      id: "Filler 1",
+      title: "Filler package 1",
+      imageUrl: 'assets/images/products/filler1.jpeg',
+      productCategoryName: 'Filler',
       expiryDate: '12-12-1212',
       price: 20000,
       visitAmount: 5,
@@ -31,8 +47,7 @@ class CardsProvider with ChangeNotifier {
     CardModel(
       id: "Laser 2",
       title: "Laser package 2",
-      imageUrl:
-          'https://firstclasse.com.my/wp-content/uploads/2019/07/Laser-treatments-featured.jpg',
+      imageUrl: 'assets/images/products/Laser2.jpeg',
       productCategoryName: 'Laser',
       expiryDate: '12-12-1212',
       price: 12000,
@@ -41,12 +56,20 @@ class CardsProvider with ChangeNotifier {
     CardModel(
       id: "Botox 2",
       title: "Botox package 2",
-      imageUrl:
-          'https://consumer.healthday.com/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yMzYzMjUzNi9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTY4ODE0ODcxN30.5qV4Ye9Q8W5NjfiTSiws7DZoBXs0cCZqWSelOFLbl_4/image.jpg',
+      imageUrl: "assets/images/products/Botox2.jpeg",
       productCategoryName: 'Botox',
       expiryDate: '12-12-1212',
       price: 20000,
       visitAmount: 5,
-    )
+    ),
+    CardModel(
+      id: "Treatment 2",
+      title: "Treatment package 2",
+      imageUrl: 'assets/images/products/Treatment2.jpeg',
+      productCategoryName: 'Treatment',
+      expiryDate: '12-12-1212',
+      price: 20000,
+      visitAmount: 5,
+    ),
   ];
 }

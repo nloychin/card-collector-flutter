@@ -24,6 +24,7 @@ class _MyAppState extends State<MyApp> {
         title: 'Card Collector Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
+          scaffoldBackgroundColor: const Color.fromARGB(255, 221, 237, 250),
         ),
         home: const HomeScreen(),
       ),

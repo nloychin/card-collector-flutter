@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
         home: Scaffold(
           body: SliderDrawer(
             key: _key,
-            sliderOpenSize: 190,
+            sliderOpenSize: 191,
             appBar: getSliderAppBar(),
             slider: MenuScreen(
               currItem: currItem,

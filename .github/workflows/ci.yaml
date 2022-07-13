@@ -1,8 +1,8 @@
 name: CI
 on:
-  pull_request:
+  push:
     branches:
-      - master
+      - main
 
 jobs:
   flutter_test:
@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: "12.x"
-      - uses: subisito/flutter-action@v1
+      - uses: subosito/flutter-action@v1
         with:
           channel: "stable"
       - run: flutter pub get

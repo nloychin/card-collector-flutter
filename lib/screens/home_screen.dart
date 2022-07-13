@@ -42,28 +42,16 @@ class _HomeScreenState extends State<HomeScreen> {
     List<CardModel> allCards = cardsProviders.getCards;
 
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.blue.shade100,
-        leading: const Icon(
-          Icons.menu,
-          color: Colors.black,
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.search, color: Colors.black),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: const Icon(Icons.person, color: Colors.black),
-            onPressed: () {},
-          )
-        ],
-      ),
       body: Container(
         height: size.height,
         child: Column(
           children: <Widget>[
+            const TextField(
+              decoration: InputDecoration(
+                hintText: "Search your cards",
+                prefixIcon: Icon(Icons.search),
+              ),
+            ),
             AnimatedOpacity(
               duration: const Duration(milliseconds: 200),
               opacity: closeTopContainer ? 0 : 1,
@@ -94,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 1,
             ),
             Expanded(
                 child: ListView.builder(

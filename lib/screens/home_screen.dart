@@ -17,7 +17,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final GlobalKey<SliderDrawerState> _key = GlobalKey<SliderDrawerState>();
   ScrollController controller = ScrollController();
   double topContainer = 0;
   bool closeTopContainer = false;

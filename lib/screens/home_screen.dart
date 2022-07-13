@@ -2,7 +2,6 @@ import 'package:card_collector/services/utils.dart';
 import 'package:card_collector/wigets/cards_wiget.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:provider/provider.dart';
 
 import '../consts/const.dart';
@@ -17,7 +16,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final GlobalKey<SliderDrawerState> _key = GlobalKey<SliderDrawerState>();
   ScrollController controller = ScrollController();
   double topContainer = 0;
   bool closeTopContainer = false;
@@ -46,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
-        body: Container(
+        body: SizedBox(
           height: size.height,
           child: Column(
             children: <Widget>[

@@ -1,4 +1,6 @@
 import 'package:card_collector/providers/card_provider.dart';
+import 'package:card_collector/screens/auth_screen.dart';
+import 'package:card_collector/screens/booking_screen.dart';
 import 'package:card_collector/screens/contact_screen.dart';
 import 'package:card_collector/screens/history_screen.dart';
 import 'package:card_collector/screens/home_screen.dart';
@@ -60,10 +62,14 @@ class _MyAppState extends State<MyApp> {
         return const HomeScreen();
       case DrawerItems.profile:
         return const ProfileScreen();
+      case DrawerItems.booking:
+        return const BookingScreen();
       case DrawerItems.history:
         return const HistoryScreen();
       case DrawerItems.contact:
         return const ContactScreen();
+      case DrawerItems.logInOut:
+        return const AuthScreen();
       default:
         return const HomeScreen();
     }
@@ -91,6 +97,16 @@ class _MyAppState extends State<MyApp> {
                 fontWeight: FontWeight.w700,
               )),
         );
+      case DrawerItems.booking:
+        return const SliderAppBar(
+          appBarColor: Colors.pink,
+          title: Text("Booking",
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+                fontWeight: FontWeight.w700,
+              )),
+        );
       case DrawerItems.history:
         return const SliderAppBar(
           appBarColor: Colors.orange,
@@ -105,6 +121,16 @@ class _MyAppState extends State<MyApp> {
         return const SliderAppBar(
           appBarColor: Colors.red,
           title: Text("Contact",
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+                fontWeight: FontWeight.w700,
+              )),
+        );
+      case DrawerItems.logInOut:
+        return const SliderAppBar(
+          appBarColor: Colors.purple,
+          title: Text("User Authentication",
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.white,

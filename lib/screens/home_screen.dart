@@ -2,6 +2,7 @@ import 'package:card_collector/services/utils.dart';
 import 'package:card_collector/wigets/cards_wiget.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:provider/provider.dart';
 
 import '../consts/const.dart';
@@ -16,6 +17,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final GlobalKey<SliderDrawerState> _key = GlobalKey<SliderDrawerState>();
   ScrollController controller = ScrollController();
   double topContainer = 0;
   bool closeTopContainer = false;
@@ -41,71 +43,68 @@ class _HomeScreenState extends State<HomeScreen> {
     final cardsProviders = Provider.of<CardsProvider>(context);
     List<CardModel> allCards = cardsProviders.getCards;
 
-    return Scaffold(
-      body: Container(
-        height: size.height,
-        child: Column(
-          children: <Widget>[
-            const TextField(
-              decoration: InputDecoration(
-                hintText: "Search your cards",
-                prefixIcon: Icon(Icons.search),
-              ),
-            ),
-            AnimatedOpacity(
-              duration: const Duration(milliseconds: 200),
-              opacity: closeTopContainer ? 0 : 1,
-              child: AnimatedContainer(
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: Scaffold(
+        body: Container(
+          height: size.height,
+          child: Column(
+            children: <Widget>[
+              AnimatedOpacity(
                 duration: const Duration(milliseconds: 200),
-                width: size.width,
-                alignment: Alignment.topCenter,
-                height: closeTopContainer ? 0 : categoryHeight,
-                child: SizedBox(
-                  height: size.height * 0.3,
-                  child: Swiper(
-                    itemBuilder: (BuildContext context, int index) {
-                      return Image.asset(
-                        Consts.offerImages[index],
-                        fit: BoxFit.fill,
-                      );
-                    },
-                    autoplay: true,
-                    itemCount: Consts.offerImages.length,
-                    pagination: SwiperPagination(
-                        alignment: Alignment.bottomCenter,
-                        builder: DotSwiperPaginationBuilder(
-                            color: Colors.white,
-                            activeColor: Colors.blue.shade100)),
-                    // control: const SwiperControl(color: Colors.black),
+                opacity: closeTopContainer ? 0 : 1,
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  width: size.width,
+                  alignment: Alignment.topCenter,
+                  height: closeTopContainer ? 0 : categoryHeight,
+                  child: SizedBox(
+                    height: size.height * 0.3,
+                    child: Swiper(
+                      itemBuilder: (BuildContext context, int index) {
+                        return Image.asset(
+                          Consts.offerImages[index],
+                          fit: BoxFit.fill,
+                        );
+                      },
+                      autoplay: true,
+                      itemCount: Consts.offerImages.length,
+                      pagination: SwiperPagination(
+                          alignment: Alignment.bottomCenter,
+                          builder: DotSwiperPaginationBuilder(
+                              color: Colors.white,
+                              activeColor: Colors.blue.shade100)),
+                      // control: const SwiperControl(color: Colors.black),
+                    ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 1,
-            ),
-            Expanded(
-                child: ListView.builder(
-                    controller: controller,
-                    itemCount: allCards.length,
-                    physics: const BouncingScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      return Align(
-                        heightFactor: 0.87,
-                        alignment: Alignment.topCenter,
-                        child: CardsWiget(
-                          id: allCards[index].id,
-                          title: allCards[index].title,
-                          imageUrl: allCards[index].imageUrl,
-                          productCategoryName:
-                              allCards[index].productCategoryName,
-                          expiryDate: allCards[index].expiryDate,
-                          price: allCards[index].price,
-                          visitAmount: allCards[index].visitAmount,
-                        ),
-                      );
-                    })),
-          ],
+              const SizedBox(
+                height: 1,
+              ),
+              Expanded(
+                  child: ListView.builder(
+                      controller: controller,
+                      itemCount: allCards.length,
+                      physics: const BouncingScrollPhysics(),
+                      itemBuilder: (context, index) {
+                        return Align(
+                          heightFactor: 0.87,
+                          alignment: Alignment.topCenter,
+                          child: CardsWiget(
+                            id: allCards[index].id,
+                            title: allCards[index].title,
+                            imageUrl: allCards[index].imageUrl,
+                            productCategoryName:
+                                allCards[index].productCategoryName,
+                            expiryDate: allCards[index].expiryDate,
+                            price: allCards[index].price,
+                            visitAmount: allCards[index].visitAmount,
+                          ),
+                        );
+                      })),
+            ],
+          ),
         ),
       ),
     );

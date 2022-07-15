@@ -48,7 +48,7 @@ class _CardsWigetState extends State<CardsWiget> {
                     ),
                     Text(
                       widget.title,
-                      style: const TextStyle(fontSize: 17, color: Colors.grey),
+                      style: const TextStyle(fontSize: 15, color: Colors.grey),
                     ),
                     const SizedBox(
                       height: 5,
@@ -65,11 +65,11 @@ class _CardsWigetState extends State<CardsWiget> {
                     ),
                     Text(
                       "available visits: ${widget.visitAmount.toString()}/${widget.visitAmount.toString()}",
-                      style: const TextStyle(fontSize: 15, color: Colors.black),
+                      style: const TextStyle(fontSize: 13, color: Colors.black),
                     ),
                     Text(
                       "Expiry date: ${widget.expiryDate}",
-                      style: const TextStyle(fontSize: 15, color: Colors.black),
+                      style: const TextStyle(fontSize: 13, color: Colors.black),
                     ),
                     const SizedBox(
                       height: 5,

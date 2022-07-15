@@ -26,7 +26,6 @@ class _CalendarWidgetState extends State<CalendarWidget> {
   @override
   Widget build(BuildContext context) {
     final size = Utils(context).getScreenSize;
-    ScrollController controller = ScrollController();
     return Container(
       height: size.height * 0.5,
       decoration: const BoxDecoration(

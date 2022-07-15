@@ -1,11 +1,8 @@
 import 'package:card_collector/wigets/calendar_wiget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 import '../models/card_model.dart';
-import '../models/meeting_model.dart';
 import '../providers/card_provider.dart';
 import '../services/utils.dart';
 import '../wigets/cards_wiget.dart';
